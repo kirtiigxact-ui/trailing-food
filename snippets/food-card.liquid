@@ -1,0 +1,30 @@
+{% liquid
+  assign selected_variant = product.selected_or_first_available_variant
+  assign category_handle = product.type | handleize
+%}
+
+<article class="food-card" data-food-category="{{ category_handle }}">
+  <a class="food-card__media" href="{{ product.url }}">
+    {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 600 | image_tag: alt: product.title, loading: 'lazy' }}
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  </a>
+
+  <div class="food-card__content">
+    <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    <p class="food-card__price">{{ selected_variant.price | money }}</p>
+
+    {% form 'product', product, class: 'food-card__form' %}
+      <input type="hidden" name="id" value="{{ selected_variant.id }}">
+      <button type="submit" class="btn btn--accent" {% unless selected_variant.available %}disabled{% endunless %}>
+        {% if selected_variant.available %}
+          Add to cart
+        {% else %}
+          Sold out
+        {% endif %}
+      </button>
+    {% endform %}
+  </div>
+</article>
