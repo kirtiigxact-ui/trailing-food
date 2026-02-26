@@ -45,6 +45,14 @@
       <button type="button" class="testimonial-slider__button" data-slider-prev aria-label="Previous testimonial">‹</button>
       <button type="button" class="testimonial-slider__button" data-slider-next aria-label="Next testimonial">›</button>
     </div>
+
+    {% if section.settings.explore_button_link != blank %}
+      <div class="testimonial-slider__explore">
+        <a href="{{ section.settings.explore_button_link }}" class="btn btn--accent">
+          {{ section.settings.explore_button_label | default: 'Explore' }}
+        </a>
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -59,6 +67,17 @@
       "id": "heading",
       "label": "Heading",
       "default": "What our customers say"
+    },
+    {
+      "type": "text",
+      "id": "explore_button_label",
+      "label": "Explore button label",
+      "default": "Explore"
+    },
+    {
+      "type": "url",
+      "id": "explore_button_link",
+      "label": "Explore button link"
     }
   ],
   "blocks": [
