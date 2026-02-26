@@ -1,9 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": { "type": "hero-banner", "settings": {} },
-    "featured": { "type": "featured-products-slider", "settings": {} },
-    "categories": { "type": "food-categories", "settings": {} },
-    "grid": { "type": "food-product-grid", "settings": {} }
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "background_image": "shopify://shop_images/8d853241-1701-4a7a-87c5-20211bf9fb83.jpg",
+        "heading": "Hot, Fresh & Delicious",
+        "subheading": "Order your favorite cuisines from one modern food store.",
+        "button_text": "Shop now",
+        "button_link": "",
+        "overlay_opacity": 35
+      }
+    },
+    "featured": {
+      "type": "featured-products-slider",
+      "settings": {
+        "heading": "Featured Food Picks",
+        "collection": "all-wines",
+        "products_to_show": 8
+      }
+    },
+    "categories": {
+      "type": "food-categories",
+      "settings": {
+        "heading": "Browse by cuisine"
+      }
+    },
+    "grid": {
+      "type": "food-product-grid",
+      "settings": {
+        "heading": "Our Food Menu",
+        "collection": "",
+        "products_to_show": 12
+      }
+    }
   },
-  "order": ["hero", "featured", "categories", "grid"]
+  "order": [
+    "hero",
+    "featured",
+    "categories",
+    "grid"
+  ]
 }
