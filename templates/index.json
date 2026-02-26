@@ -3,7 +3,8 @@
     "hero": { "type": "hero-banner", "settings": {} },
     "featured": { "type": "featured-products-slider", "settings": {} },
     "categories": { "type": "food-categories", "settings": {} },
-    "grid": { "type": "food-product-grid", "settings": {} }
+    "grid": { "type": "food-product-grid", "settings": {} },
+    "testimonial-slider": { "type": "testimonial-slider" }
   },
-  "order": ["hero", "featured", "categories", "grid"]
+  "order": ["hero", "featured", "categories", "grid", "testimonial-slider"]
 }
