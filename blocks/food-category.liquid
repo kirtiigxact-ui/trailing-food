@@ -1,0 +1,20 @@
+<div class="theme-food-block" {{ block.shopify_attributes }}>
+  {% if block.settings.image != blank %}
+    {{ block.settings.image | image_url: width: 400 | image_tag: alt: block.settings.title, loading: 'lazy' }}
+  {% endif %}
+  <h3>{{ block.settings.title }}</h3>
+  {% if block.settings.description != blank %}
+    <p>{{ block.settings.description }}</p>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Food category block",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Category" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ]
+}
+{% endschema %}

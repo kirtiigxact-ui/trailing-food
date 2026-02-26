@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "hero": { "type": "hero-banner", "settings": {} },
+    "featured": { "type": "featured-products-slider", "settings": {} },
+    "categories": { "type": "food-categories", "settings": {} },
+    "grid": { "type": "food-product-grid", "settings": {} }
+  },
+  "order": ["hero", "featured", "categories", "grid"]
+}
