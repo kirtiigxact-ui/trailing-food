@@ -1,0 +1,37 @@
+<section class="featured-slider page-width">
+  <div class="section-heading">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+
+  {% assign featured_collection = section.settings.collection %}
+  <div class="featured-slider__track" role="list">
+    {% if featured_collection != blank %}
+      {% for product in featured_collection.products limit: section.settings.products_to_show %}
+        <div class="featured-slider__item" role="listitem">
+          {% render 'food-card', product: product %}
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for i in (1..4) %}
+        <div class="featured-slider__item" role="listitem">
+          <article class="food-card">
+            <div class="food-card__media">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+            <div class="food-card__content"><h3>Featured product</h3><p class="food-card__price">{{ 1999 | money }}</p></div>
+          </article>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured food slider",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Featured Food Picks" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "products_to_show", "label": "Products to show", "min": 4, "max": 16, "step": 1, "default": 8 }
+  ],
+  "presets": [{ "name": "Featured food slider" }]
+}
+{% endschema %}
