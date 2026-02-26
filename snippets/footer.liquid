@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="page-width footer-grid">
+    <div>
+      <h3>{{ shop.name }}</h3>
+      <p>Freshly prepared food, delivered with care.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        {% for link in linklists.footer.links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>{{ shop.email }}</p>
+      <p>{{ shop.phone }}</p>
+    </div>
+  </div>
+</footer>

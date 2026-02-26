@@ -1,0 +1,119 @@
+.testimonial-slider {
+  padding: 3rem 0;
+  background: #fff3ed;
+}
+
+.testimonial-slider__header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-slider__header h2 {
+  margin: 0;
+  color: #8f2a0c;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.testimonial-slider__viewport {
+  overflow: hidden;
+}
+
+.testimonial-slider__track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(136, 51, 18, 0.1);
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.testimonial-slide__image-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.testimonial-slide__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-slide__image--placeholder {
+  background: #ffd6c6;
+}
+
+.testimonial-slide__content {
+  text-align: center;
+}
+
+.testimonial-slide__name {
+  margin: 0 0 0.25rem;
+  color: #3d2117;
+}
+
+.testimonial-slide__rating {
+  color: #f25c2a;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-slide__star--muted {
+  color: #f2c5b2;
+}
+
+.testimonial-slide__text {
+  margin: 0;
+  color: #5a3a30;
+  line-height: 1.6;
+}
+
+.testimonial-slider__controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.testimonial-slider__button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: #f25c2a;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.testimonial-slider__button:hover {
+  background: #d44415;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .testimonial-slide {
+    grid-template-columns: 80px 1fr;
+    padding: 2rem;
+  }
+
+  .testimonial-slide__image-wrap {
+    margin: 0;
+  }
+
+  .testimonial-slide__content {
+    text-align: left;
+  }
+}

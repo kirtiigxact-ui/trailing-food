@@ -1,0 +1,49 @@
+<section class="food-categories page-width">
+  <div class="section-heading">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+
+  <div class="food-categories__grid">
+    {% for block in section.blocks %}
+      <div class="category-card" {{ block.shopify_attributes }}>
+        {% if block.settings.image != blank %}
+          {{ block.settings.image | image_url: width: 500 | image_tag: alt: block.settings.title, loading: 'lazy' }}
+        {% endif %}
+        <h3>{{ block.settings.title }}</h3>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Food categories",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Browse by cuisine" }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Category name", "default": "Indian" },
+        { "type": "image_picker", "id": "image", "label": "Category image" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Food categories",
+      "blocks": [
+        { "type": "category", "settings": { "title": "Indian" } },
+        { "type": "category", "settings": { "title": "Chinese" } },
+        { "type": "category", "settings": { "title": "Italian" } },
+        { "type": "category", "settings": { "title": "Fast Food" } },
+        { "type": "category", "settings": { "title": "Desserts" } },
+        { "type": "category", "settings": { "title": "Drinks" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
